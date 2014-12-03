@@ -3,6 +3,13 @@ launchctl setenv PATH $PATH 2>/dev/null
 
 [ -n "$PS1" ] && bind "set completion-ignore-case on"
 
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+  . $(brew --prefix)/share/bash-completion/bash_completion
+fi
+
+shopt -s globstar
+
+
 export RSYNC_RSH="ssh"
 alias rsync='rsync -v --progress --partial'
 
@@ -20,6 +27,6 @@ alias less='less -R'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-export SOURCES_ROOT=~/Source
+export SOURCES_ROOT="$HOME/Source"
 
-
+export GITHUB_USER=pliljenberg
