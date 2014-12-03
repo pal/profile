@@ -1,0 +1,13 @@
+ORIGINAL_PWD=`pwd`
+
+PROFILE_INIT=`readlink ${BASH_ARGV[0]}`
+PROFILE_CORE=`dirname ${PROFILE_INIT}`
+
+echo "asd $PROFILE_INIT"
+cd "${HOME}"
+
+for conf in "${PROFILE_CORE}"/*.sh; do
+  [ -f "${conf}" ] && source "${conf}"
+done
+
+cd "${ORIGINAL_PWD}"
