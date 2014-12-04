@@ -3,6 +3,10 @@ launchctl setenv PATH $PATH 2>/dev/null
 
 [ -n "$PS1" ] && bind "set completion-ignore-case on"
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+fi
+# Bash completions2
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
   . $(brew --prefix)/share/bash-completion/bash_completion
 fi
