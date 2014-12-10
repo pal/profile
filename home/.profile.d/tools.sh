@@ -89,10 +89,37 @@ function clone() {
   cd $(basename $1)
 }
 
+# COMPLETIONS
+_go() {
+        local cur prev opts
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        prev="${COMP_WORDS[COMP_CWORD-1]}"
+        opts="$(cd ${SOURCE_ROOT} && find -mindepth 1 -maxdepth 1 -type d -printf %f\\n)"
 
-SCRIPT_DIR=$(cd "$(dirname "$BASH_SOURCE")" && pwd)
-if [ -z "`echo $PATH | grep ${SCRIPT_DIR}`" ]; then
-  export PATH=${PATH}:${SCRIPT_DIR}
-fi
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+}
 
-. ${SCRIPT_DIR}/tools_completions.sh
+_base() {
+        local cur prev opts
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        prev="${COMP_WORDS[COMP_CWORD-1]}"
+        opts="$(cd ${SOURCES_ROOT} && find -mindepth 1 -maxdepth 1 -type d -printf %f\\n)"
+
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+}
+
+_clone() {
+        local cur prev opts
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        prev="${COMP_WORDS[COMP_CWORD-1]}"
+        opts="$(getrepos.py)"
+
+        COMPREPLY=( $(compgen -W "${opts}" -X '!*'${cur}'*') )
+}
+
+complete -F _go go
+complete -F _base base
+complete -F _clone clone
