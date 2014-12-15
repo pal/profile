@@ -1,3 +1,6 @@
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+export PATH=$PATH:$DIR
 # Shortcut for: find <dir> -iname *<search>*
 flike() {
   local search path
