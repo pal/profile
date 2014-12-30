@@ -78,10 +78,6 @@ function base() {
 
 # Go to a source folder under current "SOURCE_ROOT"
 function go() {
-        if [ -z "${SOURCE_ROOT}" ]; then
-                echo "ERROR: You must set SOURCE_ROOT to use the go command!" >&2
-                return
-        fi
         cd ${SOURCE_ROOT}/$1
 }
 
@@ -94,6 +90,10 @@ function clone() {
 
 # COMPLETIONS
 _go() {
+        if [ -z "${SOURCE_ROOT}" ]; then
+                echo "ERROR: You must set SOURCE_ROOT to use the go command!"
+                return
+        fi
         local cur prev opts
         COMPREPLY=()
         cur="${COMP_WORDS[COMP_CWORD]}"
