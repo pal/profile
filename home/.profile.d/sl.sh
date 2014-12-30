@@ -5,5 +5,5 @@ export LANGUAGE="en_US.utf8"
 #export LC_ALL="en_US.utf8"
 export LC_ALL=en_US.UTF-8
 
-export SOURCE_ROOT="${SOURCES_ROOT}/pagero"
+export SOURCE_ROOT="${SOURCES_ROOT}/sl"
 

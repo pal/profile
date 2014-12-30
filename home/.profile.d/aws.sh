@@ -13,4 +13,3 @@ export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.35.0/libexec"
 export AWS_RDS_HOME="/usr/local/Cellar/rds-command-line-tools/1.14.001/libexec"
 export AWS_CLOUDWATCH_HOME="/usr/local/Cellar/cloud-watch/1.0.20.0/libexec"
 export SERVICE_HOME="$AWS_CLOUDWATCH_HOME"
-
