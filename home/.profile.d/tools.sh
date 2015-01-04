@@ -77,7 +77,7 @@ function base() {
 }
 
 # Go to a source folder under current "SOURCE_ROOT"
-function go() {
+function root() {
         cd ${SOURCE_ROOT}/$1
 }
 
@@ -89,9 +89,9 @@ function clone() {
 }
 
 # COMPLETIONS
-_go() {
+_root() {
         if [ -z "${SOURCE_ROOT}" ]; then
-                echo "ERROR: You must set SOURCE_ROOT to use the go command!"
+                echo "ERROR: You must set SOURCE_ROOT to use the root command!"
                 return
         fi
         local cur prev opts
