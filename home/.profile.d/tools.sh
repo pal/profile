@@ -123,6 +123,6 @@ _clone() {
         COMPREPLY=( $(compgen -W "${opts}" -X '!*'${cur}'*') )
 }
 
-complete -F _go go
+complete -F _root root
 complete -F _base base
 complete -F _clone clone
