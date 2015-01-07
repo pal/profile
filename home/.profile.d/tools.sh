@@ -48,28 +48,29 @@ ips() {
 function base() {
   BASE_ROOT=$1
   NEW_SOURCE_ROOT=${SOURCES_ROOT}/${BASE_ROOT}
-  OLD_BASE_ROOT=$(basename ${SOURCE_ROOT})
-
-    if [ -z "${NEW_SOURCE_ROOT}" ]; then
+  if [ -z "${NEW_SOURCE_ROOT}" ]; then
     echo "No path for SOURCE_ROOT specified. Not updating"
     return
   fi
-    if [ ! -d "${NEW_SOURCE_ROOT}" ]; then
+  if [ ! -d "${NEW_SOURCE_ROOT}" ]; then
     echo "Not a valid path [${NEW_SOURCE_ROOT}] for SOURCE_ROOT specified. Not updating"
     return
   fi
-        if [ "${NEW_SOURCE_ROOT}" == "${SOURCE_ROOT}" ]; then
+
+  if [ "${NEW_SOURCE_ROOT}" == "${SOURCE_ROOT}" ]; then
     echo "No new path for SOURCE_ROOT specified. Not updating"
     return
   fi
-  echo "Switching M2 settings"
 
-  cp ~/.m2/settings-${BASE_ROOT}.xml ~/.m2/settings.xml
+  if [ -f $HOME/.m2/settings-${BASE_ROOT}.xml ]; then
+    echo "Switching M2 settings"
+    cp $HOME/.m2/settings-${BASE_ROOT}.xml $HOME/.m2/settings.xml
+  fi
 
   echo "Setting SOURCE_ROOT to: ${NEW_SOURCE_ROOT}"
   export SOURCE_ROOT=${NEW_SOURCE_ROOT}
 
-  if [ -e "${NEW_SOURCE_ROOT}/.config" ]; then
+  if [ -d "${NEW_SOURCE_ROOT}/.config" ]; then
     echo "Sourcing config"
     source "${NEW_SOURCE_ROOT}/.config"
   fi
