@@ -88,6 +88,7 @@ function clone() {
   cd ${SOURCE_ROOT}
   URL=$(python $REPOS_PYTHON "print_clone_url('$1')")
   TOOL=${URL##*.}
+  if [ $TOOL != "git" ]; then TOOL="hg"; fi
   DIRNAME=${URL##*/}
   DIRNAME=${DIRNAME%.*}
   $TOOL clone $URL
