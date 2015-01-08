@@ -11,3 +11,4 @@ cd $CD
 
 # SL2 config
 export sl2config=pl
+export slconfig=pl
