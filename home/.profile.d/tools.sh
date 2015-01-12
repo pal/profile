@@ -86,7 +86,8 @@ function root() {
 # Clone a git repo from GIT_BASE_URL
 function clone() {
   cd ${SOURCE_ROOT}
-  URL=$(python $REPOS_PYTHON "print_clone_url('$1')")
+
+  URL=$(python $REPOS_PYTHON print_clone_url $1)
   TOOL=${URL##*.}
   if [ $TOOL != "git" ]; then TOOL="hg"; fi
   DIRNAME=${URL##*/}
@@ -125,7 +126,7 @@ _clone() {
         COMPREPLY=()
         cur="${COMP_WORDS[COMP_CWORD]}"
         prev="${COMP_WORDS[COMP_CWORD-1]}"
-        opts=$(python $REPOS_PYTHON "print_repo_list()")
+        opts=$(python $REPOS_PYTHON print_repo_list)
 
         COMPREPLY=( $(compgen -W "${opts}" -X '!*'${cur}'*') )
 }
