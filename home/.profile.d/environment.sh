@@ -34,4 +34,4 @@ export GREP_COLOR='1;32'
 export SOURCES_ROOT="$HOME/Source"
 export GIT_BASE_URL="git@git"
 
-export GITHUB_USER=pliljenberg
+export GITHUB_USER=pal
