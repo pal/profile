@@ -8,3 +8,7 @@ Install [homeshick](https://github.com/andsens/homeshick) and then clone castle:
 
     homeshick clone pal/profile
     ln -s $HOME/.profile.d/init $HOME/.profile
+
+When updated, just pull again
+    
+    homeshick pull profile
