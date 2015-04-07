@@ -11,4 +11,4 @@ Install [homeshick](https://github.com/andsens/homeshick) and then clone castle:
 
 When updated, just pull again
     
-    homeshick pull profile
+    homeshick pull 
