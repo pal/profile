@@ -35,7 +35,7 @@ export SOURCES_ROOT="$HOME/Source"
 # Git 
 alias g="git"
 alias gs="git status"
-alias gd="git diff HEAD"  # What's changed? Both staged and unstaged.
+alias gd="git diff" 
 alias gc="git commit -m"
 alias gps="git push" 
 
