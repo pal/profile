@@ -13,7 +13,6 @@ fi
 
 shopt -s globstar
 
-
 export RSYNC_RSH="ssh"
 alias rsync='rsync -v --progress --partial'
 
@@ -32,6 +31,13 @@ export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
 export SOURCES_ROOT="$HOME/Source"
-export GIT_BASE_URL="git@git"
 
+# Git 
+alias g="git"
+alias gs="git status"
+alias gd="git diff HEAD"  # What's changed? Both staged and unstaged.
+alias gc="git commit -m"
+alias gps="git push" 
+
+export GIT_BASE_URL="git@git"
 export GITHUB_USER=pal
