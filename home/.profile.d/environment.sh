@@ -36,6 +36,7 @@ export SOURCES_ROOT="$HOME/Source"
 alias g="git"
 alias gs="git status"
 alias gd="git diff" 
+alias ga="git add" 
 alias gc="git commit -m"
 alias gps="git push" 
 
