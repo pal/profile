@@ -43,3 +43,7 @@ alias gps="git push"
 
 export GIT_BASE_URL="git@git"
 export GITHUB_USER=pal
+
+# Setting for the new UTF-8 terminal support in Lion
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
