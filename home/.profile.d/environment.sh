@@ -48,5 +48,8 @@ export GITHUB_USER=pal
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Use Atom
+export EDITOR=atom
+
 # Also add homeshick! :)
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
