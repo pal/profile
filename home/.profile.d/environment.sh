@@ -47,3 +47,6 @@ export GITHUB_USER=pal
 # Setting for the new UTF-8 terminal support in Lion
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Also add homeshick! :)
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
