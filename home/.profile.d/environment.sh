@@ -11,7 +11,8 @@ if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
   . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
-shopt -s globstar
+# TODO this never works for me... Dunno why
+#shopt -s globstar
 
 export RSYNC_RSH="ssh"
 alias rsync='rsync -v --progress --partial'
