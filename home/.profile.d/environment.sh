@@ -31,7 +31,7 @@ alias less='less -R'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-export SOURCES_ROOT="$HOME/Source"
+export SOURCES_ROOT="$HOME/source"
 
 # Git 
 alias g="git"
@@ -41,6 +41,7 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gp="git pull" 
 alias gps="git push" 
+alias gss="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;"
 
 export GIT_BASE_URL="git@git"
 export GITHUB_USER=pal
@@ -49,8 +50,8 @@ export GITHUB_USER=pal
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# Use Atom
-export EDITOR=atom
+# Default Editor
+export EDITOR=code
 
 # Also add homeshick! :)
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
