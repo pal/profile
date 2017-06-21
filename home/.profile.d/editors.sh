@@ -1,3 +1,3 @@
 #editors
 
-export EDITOR=atom
+export EDITOR=code
